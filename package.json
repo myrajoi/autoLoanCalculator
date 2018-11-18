@@ -7,8 +7,8 @@
     "build": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["javascript", "ES6 classes", "loan calculator", "amortization schedule"],
+  "author": "Joi Whitmore",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^9.3.1",
@@ -24,7 +24,6 @@
   "dependencies": {
     "bootstrap": "^4.1.3",
     "jquery": "^3.3.1",
-    "mdbootstrap": "^4.5.14",
     "popper.js": "^1.14.5"
   }
 }

@@ -3,13 +3,17 @@ import './scss/app.scss';
 import './js/_validate';
 import './js/_calculator';
 
+let LoanCalculator = require('./js/_calculator');
+
 let vehiclePrice = document.getElementById('vehiclePrice');
 let termInMonths = document.getElementById('termInMonths');
 let interestPercentage = document.getElementById('interestRate');
+let downPayment = document.getElementById('downPayment');
 
 vehiclePrice.addEventListener('change', calculate);
 interestPercentage.addEventListener('change', calculate);
 termInMonths.addEventListener('change', calculate);
+downPayment.addEventListener('change', calculate);
 
 function convertToCurrency(amount) {
     return '$' + (amount).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
@@ -31,20 +35,21 @@ function append_json(schedule) {
 }
 
 function calculate() {
-    let LoanCalculator = require('./js/_calculator');
-    let vehiclePrice = parseInt(document.getElementById('vehiclePrice').value);
-    let interestRate = parseInt(document.getElementById('interestRate').value);
+    let _vehiclePrice = parseInt(vehiclePrice.value);
+    let _interestRate = parseInt(interestPercentage.value);
+    let _downPayment = downPayment.value !== '' ? parseInt(downPayment.value) : 0;
     let paymentElement = document.querySelector('.monthly-payment');
     let interestElement = document.querySelector('.interest-paid');
     let paymentAndInterestElement = document.querySelector('.principal-and-interest');
     let duration = termInMonths.value;
-    let autoLoanCalculator = new LoanCalculator(vehiclePrice, 0, interestRate, duration);
+
+    let autoLoanCalculator = new LoanCalculator(_vehiclePrice, _downPayment, _interestRate, duration);
 
     if (vehiclePrice.value !== '') {
         let calculatedInterest = interestPercentage.value > 0 ? autoLoanCalculator.calculateTotalInterest() : 0;
 
         paymentElement.innerHTML = convertToCurrency(autoLoanCalculator.payment);
-        paymentAndInterestElement.innerHTML = convertToCurrency(calculatedInterest + vehiclePrice);
+        paymentAndInterestElement.innerHTML = convertToCurrency(calculatedInterest + _vehiclePrice);
         interestElement.innerHTML = convertToCurrency(calculatedInterest);
 
         autoLoanCalculator.createAmortizationSchedule();

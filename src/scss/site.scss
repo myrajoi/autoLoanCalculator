@@ -1,6 +1,9 @@
 $blue-grey-darken-2:   #455a64 !default;
 $blue-grey-darken-3:   #37474f !default;
+$light-grey-background: #e8ecef80;
+$light-grey: #dee2e6;
 $white:                #fff;
+$header-red: #a20505;
 
 h1 {
   font-size: 1.5rem;
@@ -29,7 +32,7 @@ label {
 }
 
 .card-header {
-  background-color: #a20505;
+  background-color: $header-red;
 
   h1 {
     color: $white;
@@ -61,12 +64,17 @@ h2.schedule-header::after {
     margin: 0 auto;
   }
 
+  .calculator-wrapper,
+  .card-header {
+    border: 2px solid $header-red;
+  }
+
   .payment-details {
-    background: #e8ecef80;
+    background: $light-grey-background;
   }
 
   .table-responsive {
-    border: 1px solid #dee2e6;
+    border: 1px solid $light-grey;
     border-top: none;
 
     td {
@@ -76,7 +84,7 @@ h2.schedule-header::after {
 
   @media only screen and (max-width: 640px) {
     h2 {
-      background: #e8ecef80;
+      background: $light-grey-background;
       font-size: 1.7rem;
       line-height: 1;
       margin-bottom: 0;

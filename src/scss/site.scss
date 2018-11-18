@@ -1,4 +1,6 @@
-@import "~mdbootstrap/scss/core/colors";
+$blue-grey-darken-2:   #455a64 !default;
+$blue-grey-darken-3:   #37474f !default;
+$white:                #fff;
 
 h1 {
   font-size: 1.5rem;
@@ -30,12 +32,35 @@ label {
   background-color: #a20505;
 
   h1 {
-    color: #fff;
+    color: $white;
   }
 }
 
 .calculator-wrapper,
 .payment-details {
   min-width: 300px;
-  max-width: 460px;;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.payment-details {
+  background: #e8ecef80;
+}
+
+.table-responsive {
+  border: 1px solid #dee2e6;
+
+  td {
+    font-size: .9rem;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .table-responsive td {
+    font-size: .8rem;
+  }
 }

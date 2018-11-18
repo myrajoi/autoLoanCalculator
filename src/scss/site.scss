@@ -48,13 +48,16 @@ h2.schedule-header::after {
     content: "";
     display: inline-block;
     height: 12px;
-    margin-top: 8px;
+    margin-top: 5px;
     right: 8px;
     position: absolute;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(135deg);
     width: 12px;
+  }
+
+h2.schedule-header.collapsed::after {
+  margin-top: 8px;
+  -webkit-transform: rotate(45deg);
 }
 
   .calculator-wrapper,
@@ -100,19 +103,19 @@ h2.schedule-header::after {
     }
   }
 
-@media only screen and (min-width: 768px) {
-  .table-responsive.collapse {
+  @media only screen and (min-width: 768px) {
+    .table-responsive.collapse {
       display: block!important;
-  }
-  h2 {
-    pointer-events: none;
+    }
+    h2 {
+      pointer-events: none;
 
-    &.schedule-header::after {
-      display: none!important;
+      &.schedule-header::after {
+        display: none!important;
+      }
+    }
+
+    .border.mt-4 {
+      border: none!important;
     }
   }
-
-  .border.mt-4 {
-    border: none!important;
-  }
-}

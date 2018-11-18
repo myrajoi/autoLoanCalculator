@@ -1,0 +1,30 @@
+{
+  "name": "auto-loan-calculator",
+  "version": "1.0.0",
+  "description": "A calculator that returns the monthly payment and interest based on downpayment and total cost of automobile",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "css-loader": "^1.0.1",
+    "exports-loader": "^0.7.0",
+    "node-sass": "^4.10.0",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "mdbootstrap": "^4.5.14",
+    "popper.js": "^1.14.5"
+  }
+}

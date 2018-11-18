@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="assets/yoga-blk.png" type="image/x-icon">
+    <title>Auto Loan Calculator with Amortization Schedule</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row pt-3">
+        <div class="col-10 offset-1">
+            <div class="row">
+                <div class="card calculator-wrapper text-black-50 mb-3">
+                    <div class="card-header">
+                        <h1>Auto Loan Calculator</h1>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Enter your vehicle purchase price, term in months, and interest rate.</h5>
+                        <form class="needs-validation" style="max-width: 18rem;" novalidate>
+                            <label for="vehiclePrice">Vehicle Price</label>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                                <input type="number" id="vehiclePrice" min="1000" max="2000000" value="15000" step="10" class="form-control" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please input a price greater than $1000.
+                                </div>
+                            </div>
+                            <label for="downPayment">Down Payment</label>
+                            <div class="input-group input-group-sm">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">$</span>
+                                </div>
+                                <input type="text" id="downPayment" class="form-control">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">.00</span>
+                                </div>
+                            </div>
+
+                            <label for="interestRate">Interest Rate</label>
+                            <div class="input-group input-group-sm">
+                                <input type="number" id="interestRate" step="0.01" value="5.25" class="form-control" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">%</span>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please input rate.
+                                </div>
+                            </div>
+
+                            <label for="termInMonths">Term in months</label>
+                            <div class="input-group input-group-sm">
+                                <input type="number" id="termInMonths" step="1" value="36" class="form-control" required>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">months</span>
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please enter a value.
+                                </div>
+                            </div>
+                            <button id="calculate" class="btn btn-secondary mt-4" type="submit">Calculate</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row hide">
+                <div class="card card-body payment-details">
+                    <div class="center border-bottom pb-1">
+                        <span class="text-success monthly-payment strong big"></span><br>
+                        Estimated Monthly Payment
+                    </div>
+                    <div class="row center content">
+                        <div class="col-6 pt-3">
+                            <span class="interest-paid strong"></span><br>
+                            Total Interest Paid
+                        </div>
+                        <div class="col-6 pt-3">
+                            <span class="principal-and-interest strong">$1,500.00</span><br>
+                            Total principal + interest
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h2 class="pt-4">Amortization Schedule</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover" id="loanCalculation">
+                        <colgroup>
+                            <col class="twenty" />
+                            <col class="fourty" />
+                            <col class="thirtyfive" />
+                            <col class="twentyfive" />
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Month</th>
+                                <th>Principal</th>
+                                <th>Payment</th>
+                                <th>Interest</th>
+                            </tr>
+                        </thead>
+                        <tbody id="js-tbody">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+</div>
+<script src="./bundle.js"></script>
+</body>
+</html>

@@ -12,6 +12,22 @@ class LoanCalculator {
         return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
     }
 
+    get total(){
+        return this._total;
+    }
+
+    set total(value){
+        this._total = value;
+    }
+
+    get duration(){
+        return this._duration;
+    }
+
+    set duration(value){
+        this._duration = value;
+    }
+
     calculateTotalAmountPaid(){
         return LoanCalculator.round((this.payment * this.duration), 2);
     }
